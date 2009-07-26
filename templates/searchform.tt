@@ -1,0 +1,7 @@
+
+<form method="GET" action="[% current_url | html %]" id="dataform">
+<p><input type="text" name="q" value="[% current_args.q | html %]" /></p>
+[% INCLUDE "form_fields.tt" %]
+</form>
+<script type="text/javascript" src="dataform.js"></script>
+

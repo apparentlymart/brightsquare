@@ -1,0 +1,27 @@
+[% WRAPPER page.tt
+   title = "Confirm Checkins"
+%]
+
+<h1>Confirm Checkins</h1>
+
+<form method="POST" action="[% current_url | html %]">
+<p>Is this where you wanted to check in? <input type="submit" value="Yes. Let's do it." id="checkin_button" /></p>
+[% INCLUDE "form_fields.tt" %]
+</form>
+
+<ul class="checkins">
+[% FOR checkin IN checkins %]
+<li class="checkin">
+<img src="[% checkin.provider_icon_url | html %]" class="checkinprovidericon" width="16" height="16" />
+<div class="checkinmapcontainer"><img src="[% checkin.map_img_url | html %]" class="checkinmap" /></div>
+
+<div class="checkindetails">
+     <h2>[% checkin.place.name | html %]</h2>
+     <p>[% checkin.place.display_location | html %]</p>
+</div>
+
+</li>
+[% END %]
+</ul>
+
+[% END %]

@@ -1,0 +1,18 @@
+[% WRAPPER page.tt
+   title = "Where are you?"
+%]
+
+<h1>Places on [% provider | html %]</h1>
+
+[% INCLUDE "searchform.tt" %]
+
+<ul>
+[% FOR place IN places %]
+<li class="place"><a href="#" onclick="setValue('[% field_name | html %]', '[% place.id | html %]'); submit(); return false;">
+<span class="placename">[% place.name | html %]</span>
+<span class="placelocation">[% place.display_location | html %]</span>
+</a></li>
+[% END %]
+</ul>
+
+[% END %]

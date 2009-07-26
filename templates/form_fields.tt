@@ -1,0 +1,4 @@
+<input type="hidden" name="lat" value="[% current_args.lat | html %]" />
+<input type="hidden" name="lon" value="[% current_args.lon | html %]" />
+<input type="hidden" name="bkid" value="[% current_args.bkid | html %]" />
+<input type="hidden" name="fsid" value="[% current_args.fsid | html %]" />

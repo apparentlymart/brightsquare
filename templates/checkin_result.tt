@@ -1,0 +1,18 @@
+[% WRAPPER page.tt
+   title = "Checked in!"
+%]
+
+<h1>Checked in!</h1>
+
+<p>You were checked in successfully. [% IF notes %]Some more random information is included below.[% END %]</p>
+
+<ul>
+[% FOR note IN notes %]
+<li class="place"><a name="blah">
+<span class="placename">[% note.heading | html %]</span>
+[% IF note.extra %]<span class="placelocation">[% note.extra | html %]</span>[% END %]
+</a></li>
+[% END %]
+</ul>
+
+[% END %]

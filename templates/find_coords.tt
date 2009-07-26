@@ -1,0 +1,52 @@
+[% WRAPPER page.tt
+   title = "Attempting to Determine Your Location"
+%]
+
+<script src="gears_init.js" type="text/javascript"></script>
+
+<p>I'm attempting to determine your location. Please wait.</p>
+
+<p id="status"></p>
+
+[% INCLUDE "dataform.tt" %]
+
+<script type="text/javascript">
+
+  var statusElem = document.getElementById("status");
+
+  function fail(message) {
+      statusElem.className = "error";
+      statusElem.innerHTML = message;
+  }
+
+  function statusUpdate(message) {
+      statusElem.innerHTML = message;
+  }
+
+  function foundLocation(location) {
+      var latitude = location.latitude;
+      var longitude = location.longitude;
+      statusUpdate("Found you! You're at "+latitude+","+longitude+".");
+      setValue("lat", latitude);
+      setValue("lon", longitude);
+      submit();
+  }
+
+  function failedLocation() {
+      fail("Failed to get your location. Doh.");
+  }
+
+  if (window.google && google.gears) {
+    var geolocation = google.gears.factory.create('beta.geolocation')
+
+    try { geolocation.getCurrentPosition(foundLocation, failedLocation, { enableHighAccuracy: true }) }
+    catch (error) { fail("Failed to get your location. Sorry.") }
+  }
+  else {
+    fail("No gears!");
+  }
+
+
+</script>
+
+[% END %]

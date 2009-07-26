@@ -1,0 +1,41 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: #000000;
+    color: #ffffff;
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 10px;
+}
+
+h1 {
+    margin: 0;
+    padding: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    background: #FFCC00;
+    color: #000000;
+}
+
+p {
+    margin: 0;
+    padding: 4px;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li a {
+    display: block;
+    padding: 2px;
+    color: #ffffff;
+    text-decoration: none;
+    background: #330099;
+    font-size: 12px;
+    border: 2px #330099 outset;
+}

@@ -1,0 +1,48 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: #000000;
+    color: #ffffff;
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 14px;
+}
+
+h1 {
+    margin: 0;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background: #FFCC00;
+    color: #000000;
+}
+
+p {
+    margin: 0;
+    padding: 10px;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li a {
+    display: block;
+    padding: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    background: #330099;
+    font-size: 16px;
+    border: 2px #330099 outset;
+}
+
+.place .placename {
+    display: block;
+}
+.place .placelocation {
+    font-size: 0.75em;
+}
