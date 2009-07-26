@@ -23,6 +23,18 @@ my $t = new Template(
 
 my $config = YAML::Syck::LoadFile("$base_dir/config.yaml") or die "No configuration file";
 
+# Stupidly simple auth via a magic secret cookie
+# TODO: Do something better that maybe even allows for multiple users.
+if (my $auth_secret = $config->{CookieAuthSecret}) {
+    my $cookie_secret = $cgi->cookie('a');
+    unless ($auth_secret eq $cookie_secret) {
+        print "Status: 403 Forbidden\n";
+        print "Content-type: text/html\n\n";
+        print "<p>This is not for you.</p>";
+        exit(0);
+    }
+}
+
 my $brightsquare = new BrightSquare($config);
 
 $brightsquare->handle_request($cgi);
